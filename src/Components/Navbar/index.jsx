@@ -8,14 +8,21 @@ const Navbar = () => {
     const activeStyle = 'underline underline-offset-4';
     const { nav, openNav, closeNav } = useNavigationContext();
 
+    const handleMenuClick = () => {
+        nav ? closeNav() : openNav()
+    }
+
     const handleNavLinkClick = () => {
         closeNav();
     };
+ 
 
     return (
        
         <div className='absolute w-full flex justify-between p-4 items-center'>
-            <HiMenuAlt3 onClick={openNav} className='z-20 text-white cursor-pointer' size={25} />
+            <HiMenuAlt3 onClick={handleMenuClick} className='z-20 text-white cursor-pointer' size={25}
+             
+             />
            
             <div className={
                 nav
@@ -23,7 +30,8 @@ const Navbar = () => {
                     : 'absolute top-0 h-screen left-[-100%] ease-in duration-500 z-10'
                    
                     
-            }>
+            }
+            onClick={handleNavLinkClick}>
                  
                 <ul className='flex flex-col fixed w-full h-full items-center justify-center'>
                 <li className="font-bold text-8xl p-8 -mt-20 text-white/100"> 
