@@ -1,4 +1,4 @@
-import {IconName} from 'boxicons'
+import {IconName} from 'boxicons'//Importa una biblioteca de iconos para ser usados en esta página.
 import Layout from "../../Components/Layout"
 
 function Biography() {
